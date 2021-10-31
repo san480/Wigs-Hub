@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "wigs_hub",
-    "slug": "wigs_hub",
+    "name": "classical",
+    "slug": "classical",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
