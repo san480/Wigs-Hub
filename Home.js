@@ -1,32 +1,45 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text,FlatList, View, Image } from 'react-native';
+import { StyleSheet, Text,FlatList, View, Image, TouchableOpacity } from 'react-native';
 
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
     <View style={styles.container}>
-     <View style={{flexDirection:'row',alignContent:'space between'}}>
-      <View>
-        <Image style={{height:200, width:300, marginRight:20}} source={require('./assets/bagss2.jpg')}/>
-        <Text style={{fontSize:30}}>Bags</Text>
-      </View>
-      <View>
-        <Image style={{height:200, width:300}} source={require('./assets/accessories 1.jpg')}/>
-        <Text style={{fontSize:30}}>Accessories</Text>
-      </View>
-    </View> 
-     <View style={{flexDirection:'row',alignContent:'space between'}}>
-      <View>
-        <Image style={{height:200, width:300, marginRight:20}} source={require('./assets/makeupkit1.jpg')}/>
-        <Text style={{fontSize:30}}>Makeupkits</Text>
-      </View>
-      <View>
-        <Image style={{height:200, width:300}} source={require('./assets/perfumes1.jpg')}/>
-        <Text style={{fontSize:30}}>Perfumes</Text>
-      </View>
-    </View> 
-      <StatusBar style="auto" />
+     <View style ={styles.cagtegory}>
+         <TouchableOpacity onPress={() => navigation.navigate('Bags')}>
+         <View style={{alignItems:'center'}}>
+             <Image style={{width:190,height:250,borderRadius:20,margin:3}} resizeMode='cover' source={{uri:'https://raw.githubusercontent.com/san480/Wigs-Hub/main/bagss2.jpg'}}/>
+             <Text style={{fontSize:20}}>Bags</Text>
+         </View>
+         </TouchableOpacity>
+
+         <TouchableOpacity onPress={() => navigation.navigate('Accessories')}>
+         <View style={{alignItems:'center'}}>
+             <Image style={{width:190,height:250,borderRadius:20,margin:3}} resizeMode='cover' source={{uri:'https://raw.githubusercontent.com/san480/Wigs-Hub/main/accessories%201.jpg'}}/>
+             <Text style={{fontSize:20}}>Accessories</Text>
+         </View>
+         </TouchableOpacity>
+
+     </View>
+
+     <View style ={styles.cagtegory}>
+
+         <TouchableOpacity onPress={() => navigation.navigate('Makeup kits')}>
+            <View style={{alignItems:'center'}}>
+                <Image style={{width:190,height:250,borderRadius:20,margin:3}} resizeMode='cover' source={{uri:'https://raw.githubusercontent.com/san480/Wigs-Hub/main/makeupkit1.jpg'}}/>
+                <Text style={{fontSize:20}}>Makeup kits</Text>
+            </View>
+         </TouchableOpacity>
+
+         <TouchableOpacity onPress={() => navigation.navigate('Perfumes')}>
+            <View style={{alignItems:'center'}}>
+                <Image style={{width:190,height:250,borderRadius:20,margin:3}} resizeMode='cover' source={{uri:'https://raw.githubusercontent.com/san480/Wigs-Hub/main/perfumes1.jpg'}}/>
+                <Text style={{fontSize:20}}>Perfumes</Text>        
+            </View>
+         </TouchableOpacity>
+
+     </View>
     </View>
   );
 }
@@ -35,7 +48,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    
   },
+  cagtegory:{
+      flexDirection:'row',
+      justifyContent: 'space-between',
+      marginTop:20 
+
+  }
 });

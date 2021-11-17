@@ -7,8 +7,7 @@ export default function Login({navigation}) {
 
     <ImageBackground
       style={styles.container}
-      resizeMode = "contain"
-      source={require('./assets/background.jpg')}>
+      source={{uri:'https://raw.githubusercontent.com/san480/Wigs-Hub/main/background.jpg'}}>
 
 
 
@@ -42,6 +41,12 @@ export default function Login({navigation}) {
   color='#000'
   title ='sign in'/>
 </View>
+
+<TouchableOpacity onPress={() => navigation.navigate('Sign up')}>
+<View style={{margin:30}}>
+  <Text style={{color:'blue',fontSize:20}}> SIGN UP NOW!! </Text>
+</View>
+</TouchableOpacity>
 <StatusBar style="auto" />
     </ImageBackground> 
 
