@@ -45,7 +45,7 @@ const ACCESSORIES=  [{
 export default function Accessoriesshop({navigation}) {
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => navigation.navigate(item.title)}>
-    <View style={styles.nikeshoes}>
+    <View style={styles.categories}>
       <Image resizeMode='contain' style={{height:300,width:400,borderRadius:20,}} source={{uri:item.picture}}/>
       <Text style={styles.itemstyle}>{item.title}</Text>
       <Text>{item.price}</Text>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  nikeshoes: {
+  categories: {
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
